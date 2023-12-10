@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.waynils.exoapplication.ui.audio.AudioItemViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{()-> vm.playAudio()}"
+        android:padding="@dimen/_5sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            app:idImage="@{vm.audio.idImage}"
+            android:id="@+id/iv_music"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            tools:src="@drawable/sample1"
+            app:layout_constraintDimensionRatio="860:645"
+            app:layout_constraintEnd_toEndOf="@id/gl_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:text="@{vm.audio.title}"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_music"
+            app:layout_constraintEnd_toStartOf="@+id/appCompatImageView"
+            app:layout_constraintStart_toStartOf="@+id/gl_img"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Titre" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> vm.removeAudio()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_remove" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.30" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

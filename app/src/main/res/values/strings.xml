@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Exo Application</string>
+    <string name="error">Oops</string>
+    <string name="ok">Ok</string>
+    <string name="generic_error">Une erreur est survenue lors du chargement. Relancez l\'app</string>
+    <string name="no_network">Veuillez verifiez votre connexion internet puis relancer l\'app</string>
+</resources>
